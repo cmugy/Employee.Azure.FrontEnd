@@ -1,4 +1,5 @@
-function EmployeeController($scope) {
+
+var app= angular.module("EmployeeApp", []).controller('EmployeeController', function ($scope) {
     $scope.employees= [{
         "id": 1,
         "firstName": "Collins",
@@ -48,4 +49,12 @@ function EmployeeController($scope) {
             "salary": 3200,
             "startDate": "2018-08-31T00:00:00"
         }]; //get from api
+});
+
+function incrementSalary(employee){
+    employee.salary = employee.salary + 1000;
+}
+
+function decrementSalary(employee){
+    employee.salary= employee.salary -1000;
 }

@@ -1,15 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head >
     <meta charset="UTF-8">
     <title>Employee Website</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-<body ng-app>
+<script src="employee.js"></script>
+<body ng-app="EmployeeApp" >
 
-<div>
-    <input type="text" ng-model="name">
-    <p ng-bind="name"></p>
+<div ng-controller="EmployeeController">
+    <table>
+        <thead>
+        <tr id="tableName">
+            <th>Id</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Salary</th>
+            <th>StartDate</th>
+            <th>Increment/Decrement Salary</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="employee in employees">
+                <td>{{employee.id}}</td>
+                <td>{{employee.firstName}}</td>
+                <td>{{employee.lastName}}</td>
+                <td>{{employee.salary}}</td>
+                <td>{{employee.startDate}}</td>
+                <td>
+                    <input type="button" value="Increase Salary" ng-click="incrementSalary(employee)">
+                    <input type="button" value="Decrease Salary" ng-click="decrementSalary(employee)">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
 </div>
 
 </body>
