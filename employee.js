@@ -49,12 +49,13 @@ var app= angular.module("EmployeeApp", []).controller('EmployeeController', func
             "salary": 3200,
             "startDate": "2018-08-31T00:00:00"
         }]; //get from api
+
+    $scope.incrementSalary=function i(employee){
+        employee.salary = employee.salary + 1000;
+    }
+
+    $scope.decrementSalary=  function (employee){
+        employee.salary = employee.salary - 1000;
+    }
 });
 
-function incrementSalary(employee){
-    employee.salary = employee.salary + 1000;
-}
-
-function decrementSalary(employee){
-    employee.salary= employee.salary -1000;
-}
