@@ -26,8 +26,8 @@
                 <td>{{employee.id}}</td>
                 <td>{{employee.firstName}}</td>
                 <td>{{employee.lastName}}</td>
-                <td>{{employee.salary}}</td>
-                <td>{{employee.startDate}}</td>
+                <td>{{employee.salary | currency:"£"}}</td>
+                <td>{{employee.startDate  | date:"yyyy-MM-dd"}} </td>
                 <td>
                     <input type="button" value="Increase Salary" ng-click="incrementSalary(employee)">
                     <input type="button" value="Decrease Salary" ng-click="decrementSalary(employee)">
